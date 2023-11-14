@@ -1,4 +1,5 @@
 import numpy as np
+import os
 from flask import Flask, request, render_template
 import pickle
 
@@ -20,4 +21,5 @@ def predict():
     return render_template('index.html', prediction_text='Quantidade de casos previstas é{}'.format(prediction))
 
 if __name__ == "__main__":
-    app.run()
+    port = int(os.getenv('PORT'), '5000')
+    app.run(host='0.0.0.0', port = port)
