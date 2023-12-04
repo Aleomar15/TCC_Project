@@ -11,24 +11,55 @@
 </head>
 
 <body>
-  <div class="conteiner">
-    <div class="card mt-4">
-      <h1>Previsão de casos</h1>
+  <div class="conteiner-fluid d-flex justify-content-center align-items-center" >
+    <div class="card" style="width: 70%;">
+      <h1 style="text-align: center;" class="card-header">Previsão de casos</h1>
 
       <div class="card-body">
           <form action="{{ url_for('predict')}}"method="post">
-            <input  class="form-control" type="text" name="SE" placeholder="SE" required><br>
-            <input class="form-control" type="text" name="p_inc100k" placeholder="p_inc100k" required><br>
-            <input class="form-control"type="text" name="tweet" placeholder="tweet" required><br>
-            <input class="form-control" type="text" name="Rt" placeholder="Rt" required><br>
-            <input class="form-control" type="text" name="pop" placeholder="pop" required><br>
-            <input class="form-control" type="text" name="tempmin" placeholder="tempmin" required><br>
-            <input class="form-control" type="text" name="umidmax" placeholder="umidmax" required><br>
-            <input class="form-control" type="text" name="receptivo" placeholder="receptivo" required><br>
-            <input class="form-control" type="text" name="trasmissao" placeholder="trasmissao" required><br>
-            <input class="form-control" type="text" name="nivel_inc" placeholder="nivel_inc" required><br>
-
+            <div class="form-group row">
+              <input  class="form-control" type="text" name="SE" id="SE" placeholder="SE" required>
+              <small id="SE" class="form-text text-muted">Semana epidemiológica</small>
+            </div><br>
+            <div class="form-group row">
+              <input class="form-control" type="text" name="p_inc100k" id="p_inc100k" placeholder="p_inc100k" required>
+              <small id="p_inc100k" class="form-text text-muted">Taxa de incidência estimada por 100.000</small>
+            </div><br>
+            <div class="form-group row">
+              <input class="form-control"type="text" name="tweet" id="tweet" placeholder="tweet" required>
+              <small id="tweet" class="form-text text-muted">Número de mensagens mencionando sintomas de dengue em tweets geolocalizados.Fonte: Observatório da Dengue / UFMG</small>
+            </div><br>
+            <div class="form-group row">
+              <input class="form-control" type="text" name="Rt" id="Rt" placeholder="Rt" required>
+              <small id="Rt" class="form-text text-muted">Estimativa pontual do número reprodutivo de casos</small>
+            </div><br>
+            <div class="form-group row">
+              <input class="form-control" type="text" name="pop" id="pop" placeholder="pop" required>
+              <small id="pop" class="form-text text-muted">População estimada (IBGE)</small>
+            </div><br>
+            <div class="form-group row">
+              <input class="form-control" type="text" name="tempmin" id="tempmin" required>
+              <small id="tempmin" class="form-text text-muted">Média das temperaturas mínimas diárias ao longo da semana</small>
+            </div><br>
+            <div class="form-group row">
+              <input class="form-control" type="text" name="umidmax" id="umidmax" placeholder="umidmax" required>
+              <small id="umidmax" class="form-text text-muted">Média da umidade relativa máxima diária do ar ao longo da semana</small>
+            </div><br>
+            <div class="form-group row">
+              <input class="form-control" type="text" name="receptivo" id="receptivo" placeholder="receptivo" required>
+              <small id="receptivo" class="form-text text-muted">Indica receptividade climática, ou seja, condições para alta capacidade vetorial. 0 = desfavorável, 1 = favorável, 2 = favorável nesta semana e na semana passada, 3 = favorável por pelo menos três semanas (suficiente para completar um ciclo de transmissão)</small>
+            </div><br>
+            <div class="form-group row">
+              <input class="form-control" type="text" name="trasmissao" id="trasmissao" placeholder="trasmissao" required>
+              <small id="trasmissao" class="form-text text-muted">Evidência de transmissão sustentada: 0 = nenhuma evidência, 1 = possível, 2 = provável, 3 = altamente provável</small>
+            </div><br>
+            <div class="form-group row">
+              <input class="form-control" type="text" name="nivel_inc" id="nivel_inc" placeholder="nivel_inc" required>
+              <small id="nivel_inc" class="form-text text-muted">Incidência estimada abaixo do limiar pré-epidemia, 1 = acima do limiar pré-epidemia, mas abaixo do limiar epidêmico, 2 = acima do limiar epidêmico</small>
+            </div><br>
+            <div class="text-center">
               <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </div>
           </form>
 
         <br>
