@@ -38,7 +38,7 @@
               <small id="pop" class="form-text text-muted">População estimada (IBGE)</small>
             </div><br>
             <div class="form-group row">
-              <input class="form-control" type="text" name="tempmin" id="tempmin" required>
+              <input class="form-control" type="text" name="tempmin" id="tempmin" placeholder="tempmin" required>
               <small id="tempmin" class="form-text text-muted">Média das temperaturas mínimas diárias ao longo da semana</small>
             </div><br>
             <div class="form-group row">
@@ -64,7 +64,8 @@
 
         <br>
         <br>
-        {{ prediction_text }}
+        <div style="text-align: center;">{{ prediction_text }}</div>
+        
       </div>
     </div>
   </div>
