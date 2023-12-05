@@ -1,7 +1,7 @@
 # TCC_Project
 
 ## Recomendação
-Baixar [Anaconda]{https://www.anaconda.com/} que terá a maioria das bibliotecas para a execução do app.py, sendo necessario baixar o framework Flask
+Baixar [Anaconda](https://www.anaconda.com/) que terá a maioria das bibliotecas para a execução do app.py, sendo necessario baixar o framework Flask
 
 ## Requisitos de execução do arquivo app.py (API)
 Minimo: 
